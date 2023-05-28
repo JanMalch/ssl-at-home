@@ -1,0 +1,45 @@
+{
+	"name": "ssl-at-home",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "pnpm build:svelte && pnpm build:docker",
+		"build:svelte": "vite build",
+		"build:docker": "docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64 -t janmalch/ssl-at-home:latest .",
+		"build:docker:push": "docker buildx build --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 -t janmalch/ssl-at-home:latest .",
+		"docker:save": "docker save --output docker.tar janmalch/ssl-at-home",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@picocss/pico": "^1.5.10",
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-node": "^1.2.4",
+		"@sveltejs/kit": "^1.5.0",
+		"@types/bcryptjs": "^2.4.2",
+		"@types/cookie": "^0.5.1",
+		"@types/node": "^20.2.5",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte": "^2.26.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"sass": "^1.62.1",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.3.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"param-case": "^3.0.4"
+	},
+	"private": true
+}
