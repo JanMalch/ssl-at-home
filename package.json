@@ -3,10 +3,9 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "pnpm build:svelte && pnpm build:docker",
-		"build:svelte": "vite build",
-		"build:docker": "docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64 -t janmalch/ssl-at-home:latest .",
-		"build:docker:push": "docker buildx build --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 -t janmalch/ssl-at-home:latest .",
+		"build": "vite build",
+		"docker": "docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64 -t janmalch/ssl-at-home:latest .",
+		"docker:push": "docker buildx build --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 -t janmalch/ssl-at-home:latest .",
 		"docker:save": "docker save --output docker.tar janmalch/ssl-at-home",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
