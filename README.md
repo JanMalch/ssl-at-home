@@ -8,7 +8,7 @@ _A simple web app to create and host your own self-signed certificates, intended
 
 Run the `janmalch/ssl-at-home:latest` Docker image.
 
-**Make sure you set the `ORIGIN` environment variable to the address [where the app will be served](https://kit.svelte.dev/docs/adapter-node#environment-variables-origin-protocol-header-and-host-header).**
+**Make sure you set the `ORIGIN` environment variable to the address [where the app will be served](https://kit.svelte.dev/docs/adapter-node#environment-variables-origin-protocolheader-and-hostheader).**
 
 All generated files will be saved in `/app/files`. So you might want to create a Docker volume for that directory.
 
